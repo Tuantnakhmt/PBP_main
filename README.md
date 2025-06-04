@@ -37,3 +37,15 @@ Dự án tập trung phân tích hành vi của thuê bao nhằm dự đoán kh�
 - `sum_voice`, `voice_di_nm`
 - `hoạt động_tháng_9`, `khong_hd_thang_9`
 - `so_goi_mua`, `chu_ky_goi`
+
+## Bonus: Kết quả dự đoán mua gói
+- Trong tập dữ liệu có sự mất cân bằng giữa thuê bao mua gói (lớp 1) và không mua gói (lớp 0), mô hình XGBoostClassifier được huấn luyện với tham số scale_pos_weight giúp cải thiện khả năng nhận diện lớp thiểu số.
+
+| Class             | Precision | Recall | F1-score | Support |
+| ----------------- | --------- | ------ | -------- | ------- |
+| 0 (Không mua gói) | 0.95      | 0.80   | 0.87     | 62,700  |
+| 1 (Mua gói)       | 0.25      | 0.62   | 0.36     | 6,920   |
+| **Accuracy**      |           |        | **0.78** | 69,620  |
+| **Macro avg**     | 0.60      | 0.71   | 0.61     | 69,620  |
+| **Weighted avg**  | 0.88      | 0.78   | 0.82     | 69,620  |
+
